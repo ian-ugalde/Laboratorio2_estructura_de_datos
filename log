@@ -23,3 +23,26 @@ list.c:41:12: error: returning ‘int *’ from a function with incompatible ret
    41 |     return lista;
       |            ^~~~~
 4723eca
+Thu Aug 20 09:47:53 PM UTC 2026: 
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘createList’:
+list.c:39:5: error: unknown type name ‘list’; did you mean ‘List’?
+   39 |     list*lista = (list*) malloc(sizeof(list));
+      |     ^~~~
+      |     List
+list.c:39:19: error: ‘list’ undeclared (first use in this function); did you mean ‘List’?
+   39 |     list*lista = (list*) malloc(sizeof(list));
+      |                   ^~~~
+      |                   List
+list.c:39:19: note: each undeclared identifier is reported only once for each function it appears in
+list.c:39:24: error: expected expression before ‘)’ token
+   39 |     list*lista = (list*) malloc(sizeof(list));
+      |                        ^
+list.c:40:11: error: request for member ‘head’ in something not a structure or union
+   40 |     lista -> head = NULL;
+      |           ^~
+list.c:41:12: error: returning ‘int *’ from a function with incompatible return type ‘List *’ {aka ‘struct List *’} [-Wincompatible-pointer-types]
+   41 |     return lista;
+      |            ^~~~~
+35ef12c
